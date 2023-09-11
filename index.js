@@ -82,4 +82,19 @@ console.log(test);
 test.addVideo("Pokemon", 200);
 console.log(test);
 
-function contextDemonstrator() {}
+function contextDemonstrator(make, model, year, cost) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.cost = cost;
+  this.fullMake = function () {
+    console.log(this.make + " " + this.model);
+  };
+}
+
+const newCar = {
+  make: "Hondai",
+  model: "Sonata",
+};
+
+let fullName = contextDemonstrator.fullMake.bind(newCar);
