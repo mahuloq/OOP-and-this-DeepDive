@@ -81,3 +81,5 @@ console.log(test);
 
 test.addVideo("Pokemon", 200);
 console.log(test);
+
+function contextDemonstrator() {}
