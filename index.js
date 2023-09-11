@@ -46,3 +46,38 @@ function AnotherCar(make, model, year, cost) {
 // “Classes inherit from classes and create subclass relationships: hierarchical class taxonomies.
 
 // “A prototype is a working object instance. Objects inherit directly from other objects.”
+
+class Playlist {
+  constructor(videos, duration) {
+    this.videos = videos;
+    this.duration = duration;
+  }
+  addVideo(video, duration) {
+    this.videos.push(video);
+    this.duration.push(duration);
+  }
+  totalDuration() {
+    let sum = 0;
+    let durArr;
+    durArr = this.duration;
+    durArr.forEach((item) => {
+      sum += item;
+    }, this);
+    return `The duration of all movies is ${sum} minutes`;
+  }
+  averageDuration() {
+    let sum = 0;
+    let durArr;
+    durArr = this.duration;
+    durArr.forEach((item) => {
+      sum += item;
+    }, this);
+    let average = sum / durArr.length;
+    return `The average time of all movies is ${average} minutes`;
+  }
+}
+const test = new Playlist(["Star Wars"], [180]);
+console.log(test);
+
+test.addVideo("Pokemon", 200);
+console.log(test);
